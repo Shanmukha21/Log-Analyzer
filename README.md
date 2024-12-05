@@ -8,7 +8,7 @@ This repository contains a log analysis solution and a Streamlit-based web appli
 - **`log_analysis.ipynb`**: A Jupyter Notebook showcasing the process of analyzing log files step-by-step. Ideal for interactive exploration.
 - **`log_analysis.py`**: A standalone Python script that performs log analysis. Use this script for automated or large-scale analysis.
 - **`log_analysis_results.csv`**: The log analysis output is saved as a CSV file. It includes processed insights from the sample log file.
-- **`sample.log`**: This is a sample log file used for demonstration and testing the analysis scripts. The team Added 10,000 logs to the sample logs to test the model's capability.
+- **`sample.log`**: This is a sample log file used for demonstration and testing the analysis scripts. Added 10,000 logs to the sample logs to test the model's capability.
 
 ### 2. Streamlit_APP Directory
 - **`app.py`**: The main script for the Streamlit web application. Run this script to launch the log analysis tool in a browser.
