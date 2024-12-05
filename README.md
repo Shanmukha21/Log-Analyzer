@@ -23,3 +23,5 @@ This project provides a tool to analyze web server log files for useful insights
    ```bash
    git clone https://github.com/Shanmukha21/log-analyzer.git
    cd log-analyzer
+
+## Command to run Streamlit app `streanmlit run app.py`
