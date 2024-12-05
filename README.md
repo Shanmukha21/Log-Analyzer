@@ -1,6 +1,3 @@
-Here's the updated `README.md` file with the added points:
-
-```markdown
 # VRV Assignment
 
 This repository contains a log analysis solution and a Streamlit-based web application for visualizing log data.
@@ -31,7 +28,6 @@ This repository contains a log analysis solution and a Streamlit-based web appli
 1. Execute `log_analysis.py` using the command:
    ```bash
    python log_analysis.py
-   ```
 2. Results will be saved in `log_analysis_results.csv`.
 3. Analyze the generated `log_analysis_results.csv` file to extract actionable insights.
 
