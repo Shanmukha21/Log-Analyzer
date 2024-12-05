@@ -20,5 +20,5 @@ This project provides a tool to analyze web server log files for useful insights
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/log-analyzer.git
+   git clone https://github.com/Shanmukha21/log-analyzer.git
    cd log-analyzer
