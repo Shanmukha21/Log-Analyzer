@@ -14,6 +14,7 @@ This project provides a tool to analyze web server log files for useful insights
 
 - Python 3.x
 - pandas (`pip install pandas`)
+- Streamlit (`pip install straemlit`) (Optional)
 
 ## Installation
 
