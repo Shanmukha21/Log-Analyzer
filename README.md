@@ -58,6 +58,4 @@ This repository contains a log analysis solution and a Streamlit-based web appli
 ## Future Enhancements
 - Integration with real-time log monitoring systems.
 - Advanced analytics like anomaly detection.
-```
 
-This updated `README.md` includes the points you mentioned. You can directly use this content. Let me know if you need further modifications!
