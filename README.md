@@ -5,7 +5,6 @@ This repository contains a comprehensive log analysis solution, which includes a
 ## Project Structure
 
 ### 1. Root Directory
-- **`log_analysis.ipynb`**: A Jupyter Notebook that demonstrates how to analyze log files interactively. It includes step-by-step instructions and visualizations, ideal for exploring log data and understanding the analysis process.
 - **`log_analysis.py`**: A standalone Python script that automates log file analysis. This script processes log data and generates insights in a CSV format for large-scale or batch analysis.
 - **`log_analysis_results.csv`**: The log analysis output is saved as a CSV file. It includes processed insights, such as request counts, most accessed endpoints, and suspicious activity detected.
 - **`sample.log`**: A sample log file that contains 10,000 entries. This file is used for testing and demonstration purposes to show the capabilities of the analysis solution.
