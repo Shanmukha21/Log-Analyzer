@@ -1,5 +1,10 @@
 import re
 import pandas as pd
+import matplotlib.pyplot as plt
+import streamlit as st
+import seaborn as sns
+
+
 
 class LogAnalyzer:
     """
@@ -110,3 +115,84 @@ class LogAnalyzer:
         suspicious_ips = suspicious_ips[suspicious_ips > LogAnalyzer.FAILED_LOGIN_THRESHOLD].reset_index()
         suspicious_ips.columns = ['IP Address', 'Failed Login Count']
         return suspicious_ips
+
+class Visualizations:
+    
+    @staticmethod
+    def visualize_req_over_time(df):
+        """Visualize requests over time."""
+        try:
+            df['timestamp'] = pd.to_datetime(df['timestamp'], format='%d/%b/%Y:%H:%M:%S %z')
+        except Exception as e:
+            st.error(f"Error parsing timestamps: {e}")
+            return
+
+        requests_per_minute = df.set_index('timestamp').resample('T').size()
+
+        plt.figure(figsize=(10, 6))
+        requests_per_minute.plot()
+        plt.title("Requests Over Time")
+        plt.xlabel("Time")
+        plt.ylabel("Number of Requests")
+        plt.grid(True)
+        st.pyplot(plt)
+
+
+    @staticmethod
+    def visualize_status_code_distribution(df):
+        """Visualize HTTP status code distribution."""
+        status_counts = df['status'].value_counts()
+
+        plt.figure(figsize=(8, 5))
+        status_counts.plot(kind='bar', color='skyblue')
+        plt.title("HTTP Status Code Distribution")
+        plt.xlabel("HTTP Status Code")
+        plt.ylabel("Count")
+        plt.grid(True)
+        st.pyplot(plt)
+
+
+    @staticmethod
+    def visualize_failed_login_heatmap(df):
+        """Visualize failed login attempts as a heatmap."""
+        try:
+            # Parse the timestamp column with a specific format
+            df['timestamp'] = pd.to_datetime(df['timestamp'], format='%d/%b/%Y:%H:%M:%S %z')
+        except Exception as e:
+            st.error(f"Error parsing timestamps: {e}")
+            return
+
+        # Filter for failed logins (HTTP status 401)
+        failed_logins = df[df['status'] == '401']
+
+        if failed_logins.empty:
+            st.write("No failed login attempts detected.")
+            return
+
+        # Extract day and hour for heatmap
+        failed_logins['hour'] = failed_logins['timestamp'].dt.hour
+        failed_logins['day'] = failed_logins['timestamp'].dt.strftime('%A')
+
+        # Create pivot table
+        heatmap_data = failed_logins.pivot_table(index='day', columns='hour', aggfunc='size', fill_value=0)
+
+        # Plot heatmap
+        plt.figure(figsize=(12, 6))
+        sns.heatmap(heatmap_data, annot=True, fmt='d', cmap='coolwarm')
+        plt.title("Failed Login Attempts by Hour and Day")
+        plt.xlabel("Hour of Day")
+        plt.ylabel("Day of Week")
+        st.pyplot(plt)
+
+    @staticmethod
+    def visualize_endpoint_access(df):
+        """Visualize endpoint access counts."""
+        endpoint_counts = df['endpoint'].value_counts()
+
+        plt.figure(figsize=(10, 6))
+        endpoint_counts.plot(kind='bar', color='purple')
+        plt.title("Endpoint Access Frequency")
+        plt.xlabel("Endpoints")
+        plt.ylabel("Access Count")
+        plt.grid(True)
+        st.pyplot(plt)
