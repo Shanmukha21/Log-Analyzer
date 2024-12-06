@@ -1,7 +1,3 @@
-
-
----
-
 # VRV Assignment
 
 This repository contains a comprehensive log analysis solution, which includes a Jupyter Notebook for step-by-step log file analysis, a standalone Python script for automated analysis, and a Streamlit-based web application for interactive log data visualization.
