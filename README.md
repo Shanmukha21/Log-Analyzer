@@ -119,8 +119,15 @@ Endpoint: /login (Accessed 13 times)
    IP Address      Failed Login Count
   203.0.113.5             15
 ```
+### Output for Streamlit app
+**Requests over time**
+![image](https://github.com/user-attachments/assets/5b619efb-9dde-4ba6-95ae-ee79359c6078)
 
----
+**Status code Distribution**
+![image](https://github.com/user-attachments/assets/c8547010-cad4-48bd-a11a-15c13649cdd1)
+
+
+
 
 
 
