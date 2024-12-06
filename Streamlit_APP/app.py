@@ -7,7 +7,9 @@ Author: Ghadiyaram Shanmukhasai Sreenivas
 
 import os
 import streamlit as st
-from Streamlit_APP.utils import LogAnalyzer
+import matplotlib.pyplot as plt
+import pandas as pd
+from utils import LogAnalyzer, Visualizations
 
 def main():
     st.title("Log File Analysis Tool")
@@ -33,6 +35,22 @@ def main():
         # Parse log file
         df = LogAnalyzer.parse_log_file_to_dataframe(file_path)
 
+        # Visualization Buttons
+        st.subheader("Visualization")
+        col1, col2, col3, col4 = st.columns(4)  # Arrange buttons in a row
+        with col1:
+            if st.button("Requests Over Time"):
+                Visualizations.visualize_req_over_time(df)
+        with col2:
+            if st.button("Status Code Distribution"):
+                Visualizations.visualize_status_code_distribution(df)
+        with col3:
+            if st.button("Failed Login Attempts"):
+                Visualizations.visualize_failed_login_heatmap(df)
+        with col4:
+            if st.button("Endpoint Access"):
+                Visualizations.visualize_endpoint_access(df)
+
         # Display raw data
         st.subheader("Log File Data")
         st.dataframe(df)
@@ -54,6 +72,7 @@ def main():
             st.table(suspicious_ips)
         else:
             st.write("No suspicious activity detected.")
+
 
 if __name__ == "__main__":
     main()
