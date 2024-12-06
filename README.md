@@ -120,16 +120,16 @@ Endpoint: /login (Accessed 13 times)
   203.0.113.5             15
 ```
 ### Output for Streamlit app
-####*Requests over time*
+#### *Requests over time*
 ![image](https://github.com/user-attachments/assets/5b619efb-9dde-4ba6-95ae-ee79359c6078)
 
-####*Status code Distribution*
+#### *Status code Distribution*
 ![image](https://github.com/user-attachments/assets/c8547010-cad4-48bd-a11a-15c13649cdd1)
 
-####*Failed Login Attempts*
+#### *Failed Login Attempts*
 ![image](https://github.com/user-attachments/assets/89dc86d8-c179-454f-be57-17fc4c29c945)
 
-####*Endpoint Access*
+#### *Endpoint Access*
 ![image](https://github.com/user-attachments/assets/d36c94d2-2658-4ef3-b04a-be7d4f44e8ab)
 
 
