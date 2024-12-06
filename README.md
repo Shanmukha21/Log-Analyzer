@@ -57,7 +57,6 @@ This repository contains a log analysis solution and a Streamlit-based web appli
 
 ## Sample Input
 ```bash
-Here is a sample log file you will use for this assignment. Save it as sample.log:
 192.168.1.1 - - [03/Dec/2024:10:12:34 +0000] "GET /home HTTP/1.1" 200 512
 203.0.113.5 - - [03/Dec/2024:10:12:35 +0000] "POST /login HTTP/1.1" 401 128 "Invalid credentials"
 10.0.0.2 - - [03/Dec/2024:10:12:36 +0000] "GET /about HTTP/1.1" 200 256
