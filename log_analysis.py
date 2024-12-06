@@ -11,7 +11,7 @@ import csv
 import pandas as pd
 from collections import defaultdict
 
-# Configure Threshold for flagging suspicios activity (eg. Brute force login attempts)
+# Configure Threshold for flagging suspicious activity (eg. Brute force login attempts)
 FAILED_LOGIN_THRESHOLD = 6
 
 
@@ -40,12 +40,12 @@ def parse_log_file(file_path):
     """
     data = []
     log_pattern = (
-        r'^(?P<ip>\d+\.\d+\.\d+\.\d+) '                         # IP address
+        r'^(?P<ip>\d+\.\d+\.\d+\.\d+) '                         
         r'- - '
-        r'\[(?P<timestamp>[^\]]+)\] '                           # Timestamp
-        r'"(?P<method>[A-Z]+) (?P<endpoint>/[^ ]*) [^"]+" '     # HTTP method and endpoint
-        r'(?P<status>\d+) '                                     # HTTP status code
-        r'(?P<size>\d+)(?: "(?P<message>[^"]*)")?$'             # Response size and optional message
+        r'\[(?P<timestamp>[^\]]+)\] '                           
+        r'"(?P<method>[A-Z]+) (?P<endpoint>/[^ ]*) [^"]+" '     
+        r'(?P<status>\d+) '                                     
+        r'(?P<size>\d+)(?: "(?P<message>[^"]*)")?$'             
     )
     with open(file_path, 'r') as file:
         for line in file:
@@ -61,7 +61,7 @@ def parse_log_file(file_path):
 
 def count_sort_req_ip(df):
     """
-    Counts the number of requests made by the each IP address.
+    Counts the number of requests made by each IP address.
     
     Args:
         df (pd.DataFrame): DataFrame containing log details.
@@ -101,7 +101,7 @@ def detect_suspicious_activity(df):
         pd.DataFrame: DataFrame with IP addresses and failed login counts exceeding the threshold.
     """
     
-    failed_logins = df[df['status'] == '401']  # Filter failed login atempts
+    failed_logins = df[df['status'] == '401']  # Filter failed login attempts
     flagged_ips = failed_logins['ip'].value_counts()
     flagged_ips = flagged_ips[flagged_ips > FAILED_LOGIN_THRESHOLD].reset_index()
     flagged_ips.columns = ['IP Address', 'Failed Login Count']
