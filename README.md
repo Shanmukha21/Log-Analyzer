@@ -47,7 +47,7 @@ This repository contains a log analysis solution and a Streamlit-based web appli
 - Required libraries:
   - **Pandas**: For data analysis
   - **Streamlit**: For building the web application
-  - **Matplotlib/Seaborn**: For data visualization
+  - **Matplotlib**: For data visualization
   - Install all dependencies using `requirements.txt` if provided:
     ```bash
     pip install -r requirements.txt
