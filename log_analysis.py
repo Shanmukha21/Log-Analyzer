@@ -12,7 +12,7 @@ import pandas as pd
 from collections import defaultdict
 
 # Configure Threshold for flagging suspicious activity (eg. Brute force login attempts)
-FAILED_LOGIN_THRESHOLD = 6
+FAILED_LOGIN_THRESHOLD = 10
 
 
 def validate_log_file(file_path):
