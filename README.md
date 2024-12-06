@@ -120,16 +120,20 @@ Endpoint: /login (Accessed 13 times)
   203.0.113.5             15
 ```
 ### Output for Streamlit app
-#### *Requests over time*
+#### **Requests over time** *Time Series Plot (Line Plot)*
+- This graph visualizes the number of requests over time, where the x-axis represents time (down to the minute), and the y-axis represents the count of requests. It helps track how the number of requests changes over time.
 ![image](https://github.com/user-attachments/assets/5b619efb-9dde-4ba6-95ae-ee79359c6078)
 
-#### *Status code Distribution*
+#### **Status code Distribution** *Bar Chart*
+- This graph displays the distribution of HTTP status codes (e.g., 200, 404, 401) and their frequency. The x-axis represents different HTTP status codes, and the y-axis represents the count of occurrences for each status code.
 ![image](https://github.com/user-attachments/assets/c8547010-cad4-48bd-a11a-15c13649cdd1)
 
-#### *Failed Login Attempts*
+#### **Failed Login Attempts** *Heatmap*
+- This graph visualizes failed login attempts (HTTP status code 401) in a heatmap format. The heatmap shows the frequency of failed login attempts by the hour of the day and day of the week. It helps identify patterns or peak times for failed logins.
 ![image](https://github.com/user-attachments/assets/89dc86d8-c179-454f-be57-17fc4c29c945)
 
-#### *Endpoint Access*
+#### **Endpoint Access** *Bar Chart*
+- This graph shows the frequency of access for each endpoint in the log data. The x-axis represents different endpoints, and the y-axis represents the count of accesses for each endpoint.
 ![image](https://github.com/user-attachments/assets/d36c94d2-2658-4ef3-b04a-be7d4f44e8ab)
 
 
