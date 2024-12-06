@@ -137,6 +137,10 @@ Endpoint: /login (Accessed 13 times)
 ![image](https://github.com/user-attachments/assets/d36c94d2-2658-4ef3-b04a-be7d4f44e8ab)
 
 
+- **Line Plot** for visualizing time-based request trends.
+- **Bar Chart** for visualizing HTTP Status code distributions and Endpoint access frequencies.
+- **Heatmap** for visualizing the distribution of failed login attempts across time (hour and day)
+
 
 
 
