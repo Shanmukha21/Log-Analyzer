@@ -1,4 +1,4 @@
-# VRV Assignment
+# Log Analyzer
 
 This repository contains a comprehensive log analysis solution, which includes a Jupyter Notebook for step-by-step log file analysis, a standalone Python script for automated analysis, and a Streamlit-based web application for interactive log data visualization.
 
@@ -7,7 +7,7 @@ This repository contains a comprehensive log analysis solution, which includes a
 ### 1. Root Directory
 - **`log_analysis.py`**: A standalone Python script that automates log file analysis. This script processes log data and generates insights in a CSV format for large-scale or batch analysis.
 - **`log_analysis_results.csv`**: The log analysis output is saved as a CSV file. It includes processed insights, such as request counts, most accessed endpoints, and suspicious activity detected.
-- **`sample.log`**: A sample log file that contains 10,000 entries. This file is used for testing and demonstration purposes to show the capabilities of the analysis solution.
+- **`sample.log`**: This is a sample log file containing 10,000 entries. It is used for testing and demonstration purposes to show the capabilities of the analysis solution.
 
 ### 2. Streamlit_APP Directory
 - **`app.py`**: The main script for the Streamlit web application. Run this script to launch the log analysis tool in a web browser, allowing users to upload log files and view interactive visualizations.
